@@ -4,11 +4,30 @@
     margin: 8px;
 }
 
-.button {
-    margin: 8px 32px;
-    border: none;
-    cursor: pointer;
-    font-size: 1rem;
+.hamburger {
+    display: none;
+}
+
+.hamburger_links {
+    display: none;
+}
+
+@media screen and (max-width: 500px) {
+    .nav {
+        justify-content: left;
+    }
+    .hamburger {
+        display: block;
+    }
+
+    .hamburger_links {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .links {
+        display: none;
+    }
 }
 
 
