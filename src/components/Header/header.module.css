@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap');
+
+.header {
+    margin: 0;
+}
+
+.title {
+    font-family: "Tangerine", cursive;
+    font-weight: bold;
+    font-size: 3rem;
+    text-align: center;
+}

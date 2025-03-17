@@ -1,0 +1,9 @@
+.main {
+    flex-grow: 1;
+    background-color: aqua;
+}
+
+.product_display {
+    display: flex;
+    flex-wrap: wrap;
+}
