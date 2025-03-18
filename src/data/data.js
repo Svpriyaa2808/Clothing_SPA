@@ -15,24 +15,26 @@ export const products = [
     new Apparels("Formal Shirt","Men", "Linen", "349", "Light Blue", "Elegant linen shirt, perfect for office and formal occasions.","blue_formal_shirt.jpg"),
     new Apparels("Jeans", "Men","Denim","399", "Dark Blue","Classic denim jeans with a comfortable slim fit.","dark-blue-denim.jpg"),
     new Apparels("Polo T-Shirt","Men", "Cotton", "299", "Green","Classic polo T-shirt with a breathable cotton finish.","green-tshirt.jpg"),
-    new Apparels("Floral Dress", "Women", "Cotton", "499", "Pink", "Elegant floral dress with a flowy silhouette, perfect for summer.", ""),
-    new Apparels("Skinny Jeans", "Women", "Denim", "549", "Blue", "Stylish skinny jeans with a stretchable fit.", ""),
-    new Apparels("Crop Top", "Women", "Polyester", "199", "White", "Trendy crop top with a round neck, ideal for casual outings.", ""),
-    new Apparels("Long Cardigan", "Women", "Wool", "699", "Beige", "Cozy long cardigan to keep you warm during chilly days.", ""),
+    new Apparels("Floral Dress", "Women", "Cotton", "499", "Pink", "Elegant floral dress with a flowy silhouette, perfect for summer.", "pink_floral_dress.jpg"),
+    new Apparels("Skinny Jeans", "Women", "Denim", "549", "Blue", "Stylish skinny jeans with a stretchable fit.", "blue_skinny_denim_jeans.jpg"),
+    new Apparels("Crop Top", "Women", "Polyester", "199", "White", "Trendy crop top with a round neck, ideal for casual outings.", "white_crop_top.jpg"),
+    new Apparels("Long Cardigan", "Women", "Wool", "699", "Beige", "Cozy long cardigan to keep you warm during chilly days.", "beige_long_cardigan.jpg"),
     new Apparels("Ankle Boots", "Women", "Leather", "799", "Brown","Stylish leather ankle boots with a block heel.", ""),
-    new Apparels("Maxi Skirt", "Women", "Chiffon", "399", "Red", "Flowy chiffon maxi skirt with an elegant design.", ""),
-    new Apparels("Cartoon T-Shirt", "Kids", "Cotton", "149", "Yellow", "Fun and comfortable T-shirt featuring a cute cartoon print.", ""),
-    new Apparels("Denim Shorts", "Kids", "Denim", "249", "Light Blue", "Classic denim shorts with a soft waistband for extra comfort.", ""),
-    new Apparels("Hooded Jacket", "Kids", "Fleece", "349", "Red", "Warm and stylish hoodie with a zip closure.", ""),
-    new Apparels("Summer Dress", "Kids", "Cotton", "299", "Purple", "Lightweight summer dress with cute floral patterns.", ""),
+    new Apparels("Maxi Skirt", "Women", "Chiffon", "399", "Red", "Flowy chiffon maxi skirt with an elegant design.", "red_maxi_skirt.jpg"),
+    new Apparels("Cartoon T-Shirt", "Kids", "Cotton", "149", "Yellow", "Fun and comfortable T-shirt featuring a cute cartoon print.", "yellow_cartoon_tshirt.jpg"),
+    new Apparels("Denim Shorts", "Kids", "Denim", "249", "Light Blue", "Classic denim shorts with a soft waistband for extra comfort.", "light_blue_denim_shorts.jpg"),
+    new Apparels("Hooded Jacket", "Kids", "Fleece", "349", "Red", "Warm and stylish hoodie with a zip closure.", "red_hooded_jackets.jpg"),
+    new Apparels("Summer Dress", "Kids", "Cotton", "299", "Purple", "Lightweight summer dress with cute floral patterns.", "purple_summer_dress.jpg"),
     new Apparels("Velcro Sneakers", "Kids", "Synthetic", "199", "White", "Easy-to-wear velcro sneakers for active kids.", ""),
-    new Apparels("Printed Pajamas", "Kids", "Cotton", "249", "Blue", "Soft and comfy pajama set with fun printed patterns.", "")
+    new Apparels("Printed Pajamas", "Kids", "Cotton", "249", "Blue", "Soft and comfy pajama set with fun printed patterns.", "blue_printed_pajamas.jpg")
   ]
 
 export const uniqueCategories = [...new Set(products.map(item => item.category))]
 console.log(uniqueCategories)
 
 export const menCategories = products.filter((item)=>item.category === "Men")
+export const womenCategories = products.filter((item)=>item.category === "Women")
+export const kidsCategories = products.filter((item)=>item.category === "Kids")
 console.log(menCategories)
 
 export const colorFilter = [...new Set(products.map(item => item.colour) )]

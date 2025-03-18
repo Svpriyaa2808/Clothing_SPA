@@ -6,6 +6,7 @@ import KidsMain from './components/KidsMain'
 import MenApp from './components/MenApp'
 import WomenMain from './components/WomenMain'
 import ProductDisplay from './components/ProductDisplay'
+import MenMain from './components/MenMain'
 
 function App() {
   const [showPage, setShowPage] = useState(null)
@@ -14,15 +15,16 @@ function App() {
     <>
       <Navigation selectedPage={setShowPage} selectedProduct={setProductDetails}/>
       <Header />
+      <div className='main'>
       {!productDetails && <>
       {!showPage && <HomeMain />}
       {showPage === "Kids" && <KidsMain />}
-      {showPage === "Men" && <MenApp selectedProduct = {setProductDetails}/>}
-      {showPage === "Women" && <WomenMain />}
+      {showPage === "Men" && <MenMain clickedProduct = {setProductDetails}/>}
+      {showPage === "Women" && <WomenMain clickedProduct={setProductDetails}/>}
       </>
 }
       {productDetails &&  <ProductDisplay displayProduct={productDetails}/>}
-     
+      </div>
     </>
   )
 }
