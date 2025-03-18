@@ -1,25 +1,35 @@
 .men_product_container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-arou;
+    justify-content: space-around;
 }
 
-.div {
-    margin: 8px;
-    flex: 1 0 25%;
+.display_container {
+    flex: 1 0 29%;
     padding: 16px;
-    border: 5px solid black;
     border-radius: 10px;
     justify-content: center;
-    text-align: center;
     cursor: pointer;
 }
 
 .men_product_container img{
-    width: 45%;
+    width: 100%;
     height: auto;
 }
 
-.div:hover {
+.display_container:hover {
     transform: scale(1.02);
+}
+
+.display_container p {
+    margin: 0;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+@media screen and (max-width:768px) {
+   .display_container {
+    flex: 1 0 50%;
+   } 
 }

@@ -10,7 +10,7 @@ const ProductDisplay = ({displayProduct}) => {
             <p>Gender : {displayProduct.category}</p>
             <p>Fabric: {displayProduct.fabric}</p>
             <p>Colour: {displayProduct.colour}</p>
-            <p>Available Sizes : {size}</p>
+            <p>Available Sizes :{size}</p>
         </div>
     )    
 }

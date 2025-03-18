@@ -1,0 +1,3 @@
+for colors use set function and filter - create component for filter 
+try to display all the colours if the filter button is clicked
+state function if needed 
