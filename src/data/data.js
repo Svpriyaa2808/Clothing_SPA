@@ -10,8 +10,8 @@ function Apparels (name,category,fabric,price,colour,description,image) {
 
 export const products = [
     new Apparels("Denim Jacket", "Men",  "Denim",  "499", "Blue",  "A stylish and durable denim jacket, perfect for casual wear.","blue-denim-jacket.jpg"),
-    new Apparels( "Cotton T-Shirt", "Men",  "Cotton", "199", "Red", "Soft and breathable cotton T-shirt, ideal for daily wear.","redt-shirt.jpg"),
-    new Apparels("Leather Jacket", "Men",  "Leather", "899", "Black","Premium leather jacket with a modern fit, great for bikers.","black-leather-jacket.jpg"),
+    new Apparels( "Red Cotton T-Shirt", "Men",  "Cotton", "199", "Red", "Soft and breathable cotton T-shirt, ideal for daily wear.","redt-shirt.jpg"),
+    new Apparels("Black Leather Jacket", "Men",  "Leather", "899", "Black","Premium leather jacket with a modern fit, great for bikers.","black-leather-jacket.jpg"),
     new Apparels("Formal Shirt","Men", "Linen", "349", "Light Blue", "Elegant linen shirt, perfect for office and formal occasions.","blue_formal_shirt.jpg"),
     new Apparels("Jeans", "Men","Denim","399", "Dark Blue","Classic denim jeans with a comfortable slim fit.","dark-blue-denim.jpg"),
     new Apparels("Polo T-Shirt","Men", "Cotton", "299", "Green","Classic polo T-shirt with a breathable cotton finish.","green-tshirt.jpg"),

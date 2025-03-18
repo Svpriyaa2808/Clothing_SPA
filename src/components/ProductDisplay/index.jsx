@@ -1,16 +1,31 @@
 import { getImageUrl } from "../../utils/function"
 import { size } from "../../data/data"
+import styles from './productDisplay.module.css'
+
 const ProductDisplay = ({displayProduct}) => {
     console.log(displayProduct)
     return (
-        <div>
-            <p>{displayProduct.name}</p>
-            <img src={getImageUrl(displayProduct.image)} alt={displayProduct.image}  ></img>
-            <p>{displayProduct.description}</p>
-            <p>Gender : {displayProduct.category}</p>
-            <p>Fabric: {displayProduct.fabric}</p>
-            <p>Colour: {displayProduct.colour}</p>
-            <p>Available Sizes :{size}</p>
+        <div className={styles.product_display}>
+            <div className={styles.image_container}>
+                <img src={getImageUrl(displayProduct.image)} alt={displayProduct.image}  ></img>
+            </div>
+            <div className={styles.product_details}>
+                <div className={styles.name}>
+                    <p>{displayProduct.name}</p>
+                    <p>{displayProduct.price}</p>
+                </div>
+                <div className={styles.description}>
+                    <h2>DESCRIPTION</h2>
+                    <p>{displayProduct.description}</p>
+                    <p>Category : <span>{displayProduct.category}</span></p>
+                    <p>Fabric: <span>{displayProduct.fabric}</span></p>
+                    <p>Colour: <span>{displayProduct.colour}</span></p>
+                    <p>Available Sizes :<span>{size}</span></p>
+                </div>
+                <div className={styles.add_button}>
+                    <button className={styles.button}>ADD</button>
+                </div>
+            </div>
         </div>
     )    
 }
