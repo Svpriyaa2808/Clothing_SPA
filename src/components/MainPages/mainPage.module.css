@@ -1,18 +1,18 @@
-.women_product_container {
+.product_container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
 }
 
 .display_container {
-    flex: 1 0 27%;
+    flex: 1 0 29%;
     padding: 16px;
     border-radius: 10px;
     justify-content: center;
     cursor: pointer;
 }
 
-.women_product_container img{
+.product_container img{
     width: 100%;
     height: auto;
 }
