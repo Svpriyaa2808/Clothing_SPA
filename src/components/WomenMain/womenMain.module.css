@@ -5,7 +5,7 @@
 }
 
 .display_container {
-    flex: 1 0 29%;
+    flex: 1 0 27%;
     padding: 16px;
     border-radius: 10px;
     justify-content: center;
@@ -15,10 +15,6 @@
 .women_product_container img{
     width: 100%;
     height: auto;
-}
-
-.display_container:hover {
-    transform: scale(1.02);
 }
 
 .display_container p {

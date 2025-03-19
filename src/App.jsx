@@ -3,9 +3,9 @@ import Header from './components/Header'
 import HomeMain from './components/HomeMain'
 import Navigation from './components/Navigation'
 import KidsMain from './components/KidsMain'
+import MenMain from './components/MenMain'
 import WomenMain from './components/WomenMain'
 import ProductDisplay from './components/ProductDisplay'
-import MenMain from './components/MenMain'
 
 function App() {
   const [showPage, setShowPage] = useState(null)
@@ -14,7 +14,6 @@ function App() {
     <>
       <Navigation selectedPage={setShowPage} selectedProduct={setProductDetails}/>
       <Header />
-      <div className='main'>
       {!productDetails && <>
       {!showPage && <HomeMain />}
       {showPage === "Kids" && <KidsMain />}
@@ -23,7 +22,7 @@ function App() {
       </>
 }
       {productDetails &&  <ProductDisplay displayProduct={productDetails}/>}
-      </div>
+     
     </>
   )
 }
