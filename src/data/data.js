@@ -49,3 +49,6 @@ getRandomSizes(); // Example Output: ["M", "XL"]
 
 export const size = getRandomSizes();
 
+export const colourFilterProductsArray = (product) => {
+  return products.filter((item)=>item.colour === product)
+}

@@ -1,0 +1,13 @@
+.colours  {
+    margin: 0 16px;
+    text-align: end;
+    background-color: beige;
+}
+
+.colour_names {
+    margin: 0 8px;
+}
+
+.colour_names p {
+    margin: 16px 0;
+}

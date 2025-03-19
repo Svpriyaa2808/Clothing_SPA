@@ -1,0 +1,12 @@
+.filter {
+    margin: 16px;
+    text-align: end;
+}
+
+.button {
+    width: 60px;
+    font-size: 1rem;
+    font-weight: lighter;
+    cursor: pointer;
+    position: relative;
+}
