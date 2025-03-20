@@ -1,12 +1,12 @@
 import styles from '../mainPage.module.css'
 import { kidsCategories } from '../../../data/data'
 import { getImageUrl } from '../../../utils/function'
-import Filter from '../../ColorFilter'
+import ColourFilter from '../../ColorFilter'
 
 const KidsMain = ({clickedProduct,selectedPage,selectColour}) => {
     return (
         <>
-        <Filter chooseColour={selectColour} choosePage={selectedPage}/>
+        <ColourFilter chooseColour={selectColour} choosePage={selectedPage}/>
         <div className={styles.product_container}>
             {kidsCategories.map((item,index)=> 
                 <div className={styles.display_container}key={index} onClick={()=>clickedProduct(item)}>

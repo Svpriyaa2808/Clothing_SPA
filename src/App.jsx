@@ -8,6 +8,7 @@ import WomenMain from './components/MainPages/WomenMain'
 import ProductDisplay from './components/ProductDisplay'
 import FilterProducts from './components/FilterProducts'
 import { colourFilterProductsArray} from './data/data'
+
 function App() {
   const [showPage, setShowPage] = useState(null)
   const [productDetails, setProductDetails] = useState(null)

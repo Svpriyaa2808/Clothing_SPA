@@ -59,6 +59,17 @@ export const sortProductsByPrice = (order = "asc") => {
   );
 };
 
+export const sortedAsc = sortProductsByPrice(products, "asc");  // Low to High
+console.log(sortedAsc);
+
+export const ascPrice = [...new Set(sortedAsc.map(item => item.price))]
+
+
+
+const sortedDesc = sortProductsByPrice(products, "desc"); // High to Low
+console.log(sortedDesc);
+
+
 
 
 // const white = products.filter((item) => 

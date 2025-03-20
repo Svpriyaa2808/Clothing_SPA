@@ -1,12 +1,14 @@
 import styles from '../mainPage.module.css'
 import { womenCategories } from '../../../data/data'
 import { getImageUrl } from '../../../utils/function'
-import Filter from '../../ColorFilter'
+import ColourFilter from '../../ColorFilter'
+import PriceFilter from '../../PriceFilter'
 
 const WomenMain = ({clickedProduct,selectColour,selectedPage}) => {
      return (
             <>
-            <Filter chooseColour={selectColour} choosePage={selectedPage}/>
+            <PriceFilter />
+            <ColourFilter chooseColour={selectColour} choosePage={selectedPage}/>
             <div className={styles.product_container}>
                 {womenCategories.map((item,index)=> 
                 <div className={styles.display_container}key={index} onClick={()=>clickedProduct(item)}>

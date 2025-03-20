@@ -2,9 +2,9 @@ for colors use set function and filter - create component for filter - completed
 try to display all the colours if the filter button is clicked - completed
 state function if needed - completed
 
-Align the filterproduct page 
-give link to productdisplay from filtered productdisplay
-
+Align the filterproduct page completed
+give link to productdisplay from filtered productdisplay completed
+sort by price high to low and low to high
 try filter by fabric 
 homepage content
 Footer content
