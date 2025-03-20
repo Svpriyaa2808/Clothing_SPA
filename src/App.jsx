@@ -20,7 +20,7 @@ function App() {
       <Navigation selectedPage={setShowPage} selectedProduct={setProductDetails} selectColour={setShowFilterProduct}/>
       <Header />
       <div className='main'>
-        {priceA.map(item => <p>{item}</p>)}
+        
       {!productDetails && 
 
       <>

@@ -37,7 +37,7 @@ export const womenCategories = products.filter((item)=>item.category === "Women"
 export const kidsCategories = products.filter((item)=>item.category === "Kids")
 console.log(menCategories)
 
-export const colorFilter = [...new Set(products.map(item => item.colour) )]
+export const colorFilter = [...new Set(products.map(item => item.colour.includes("Blue") ? "Blue" : item.colour))]
 console.log(colorFilter)
 
 const sizes = ["XS ", "S ", "M ", "L ", "XL ", "XXL "];

@@ -6,7 +6,7 @@ const FilterProducts = ({displayFilterProducts,clickedProduct}) => {
     return (
         <>
         <div className={styles.filter_details}>
-            {/* <h4>Filter : {displayFilterProducts[0].colour}</h4> */}
+            <h4>Filter : {displayFilterProducts[0].colour}</h4>
             <h4>Total Products: {displayFilterProducts.length}</h4>
         </div>
         <div className={styles.filter_products_container}>
