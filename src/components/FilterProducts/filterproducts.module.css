@@ -1,0 +1,38 @@
+.filter_details {
+    display: flex;
+    margin: 8px 32px;
+    gap: 16px;
+}
+
+.filter_details h4 {
+    font-size: 1.2rem;
+    border: 2px solid white;
+    background-color: black;
+    color: white;
+    margin: 8px;
+    padding: 8px;
+}
+
+.filter_products_container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    cursor: pointer;
+}
+
+.filter_products {
+    /* border: 2px solid black; */
+    margin: 8px;
+    font-weight: bold;
+}
+
+.filter_products p {
+    text-align: left;
+}
+
+.filter_products img {
+    width: 100%;
+    height: auto;
+}
+

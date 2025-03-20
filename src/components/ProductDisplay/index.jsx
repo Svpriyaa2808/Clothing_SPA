@@ -12,7 +12,7 @@ const ProductDisplay = ({displayProduct}) => {
             <div className={styles.product_details}>
                 <div className={styles.name}>
                     <p>{displayProduct.name}</p>
-                    <p>{displayProduct.price}</p>
+                    <p>{displayProduct.price} SEK</p>
                 </div>
                 <div className={styles.description}>
                     <h2>DESCRIPTION</h2>

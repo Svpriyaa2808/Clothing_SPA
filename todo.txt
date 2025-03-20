@@ -1,3 +1,11 @@
-for colors use set function and filter - create component for filter 
-try to display all the colours if the filter button is clicked
-state function if needed 
+for colors use set function and filter - create component for filter - completed
+try to display all the colours if the filter button is clicked - completed
+state function if needed - completed
+
+Align the filterproduct page 
+give link to productdisplay from filtered productdisplay
+
+try filter by fabric 
+homepage content
+Footer content
+search field

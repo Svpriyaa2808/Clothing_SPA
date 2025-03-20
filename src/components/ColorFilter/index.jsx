@@ -1,4 +1,4 @@
-
+import {Funnel} from "@phosphor-icons/react"
 import styles from './colorfilter.module.css'
 import { useState } from 'react'
 import ShowFilter from '../ShowFilter'
@@ -12,7 +12,11 @@ const Filter = ({chooseColour,choosePage}) => {
     return (
         <>
         <div className={styles.filter}>
-            <button className={styles.button} onClick={handleFilter}>Filter</button>
+            <button className={styles.button} onClick={handleFilter}>
+                <p>Filter</p>
+                <Funnel size={32} />
+            </button>
+            
         </div>
         <div>
         {showColourFilter && <ShowFilter filteredColour={chooseColour} hidePage={choosePage}/>}

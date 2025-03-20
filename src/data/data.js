@@ -50,5 +50,20 @@ getRandomSizes(); // Example Output: ["M", "XL"]
 export const size = getRandomSizes();
 
 export const colourFilterProductsArray = (product) => {
-  return products.filter((item)=>item.colour === product)
+  return products.filter((item)=>item.colour.includes(product))
 }
+
+export const sortProductsByPrice = (order = "asc") => {
+  return [...products].sort((a, b) => 
+    order === "asc" ? Number(a.price) - Number(b.price) : Number(b.price) - Number(a.price)
+  );
+};
+
+
+
+// const white = products.filter((item) => 
+//   item.colour.includes("Blue"))
+
+
+
+// console.log(white)
