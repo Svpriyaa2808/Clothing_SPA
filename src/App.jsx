@@ -27,17 +27,17 @@ function App() {
       <>
         {!showPage && <HomeMain />}
 
-        {showPage === "Kids" && 
+        {showPage === "Kids" && !showFilterProduct && 
           <KidsMain clickedProduct={setProductDetails}
                     selectedPage= {setShowPage} 
                     selectColour = {setShowFilterProduct}/>}
 
-        {showPage === "Men" && 
+        {showPage === "Men" && !showFilterProduct &&
           <MenMain clickedProduct = {setProductDetails}
                     selectedPage= {setShowPage} 
                     selectColour = {setShowFilterProduct}/>}
 
-        {showPage === "Women" && 
+        {showPage === "Women" && !showFilterProduct && 
           <WomenMain clickedProduct={setProductDetails} 
                       selectedPage= {setShowPage} 
                       selectColour = {setShowFilterProduct}/>}
@@ -45,12 +45,13 @@ function App() {
       }
       {productDetails &&  <ProductDisplay displayProduct={productDetails}/>}
 
-      {!productDetails && showFilterProduct && showPage &&(
+      {!productDetails && showFilterProduct  &&(
         <>
-          <FilterProducts clickedProduct={setProductDetails} displayFilterProducts={colourFilterProductsArray(showFilterProduct)} />
+          <FilterProducts clickedProduct={setProductDetails} displayFilterProducts={colourFilterProductsArray(showFilterProduct,showPage)} />
         </>
       )}
 </div>
+
     </>
     
   )

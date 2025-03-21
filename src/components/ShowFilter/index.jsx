@@ -1,11 +1,12 @@
 import styles from './showfilter.module.css'
 import { colorFilter } from '../../data/data'
 
+
 const ShowFilter = ({filteredColour,hidePage}) => {
 
     const handleColourFilter = (item) => {
         filteredColour(item)
-        hidePage(item)
+        // hidePage(item)  
     }
     
     return(

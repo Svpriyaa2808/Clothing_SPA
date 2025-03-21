@@ -4,11 +4,11 @@ import { getImageUrl } from '../../../utils/function'
 import ColourFilter from '../../ColorFilter'
 import PriceFilter from '../../PriceFilter'
 
-const WomenMain = ({clickedProduct,selectColour,selectedPage}) => {
+const WomenMain = ({clickedProduct,selectColour}) => {
      return (
             <>
             <PriceFilter />
-            <ColourFilter chooseColour={selectColour} choosePage={selectedPage}/>
+            <ColourFilter chooseColour={selectColour} />
             <div className={styles.product_container}>
                 {womenCategories.map((item,index)=> 
                 <div className={styles.display_container}key={index} onClick={()=>clickedProduct(item)}>

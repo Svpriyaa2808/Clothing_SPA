@@ -2,7 +2,8 @@ import {Funnel} from "@phosphor-icons/react"
 import styles from './colorfilter.module.css'
 import { useState } from 'react'
 import ShowFilter from '../ShowFilter'
-const ColourFilter = ({chooseColour,choosePage}) => {
+
+const ColourFilter = ({chooseColour}) => {
     const[showColourFilter,setShowColourFilter] = useState(null)
 
     const handleFilter = () => {
@@ -19,7 +20,7 @@ const ColourFilter = ({chooseColour,choosePage}) => {
             
         </div>
         <div>
-        {showColourFilter && <ShowFilter filteredColour={chooseColour} hidePage={choosePage}/>}
+        {showColourFilter && <ShowFilter filteredColour={chooseColour} />}
         </div>
         </>
     )

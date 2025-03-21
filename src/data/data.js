@@ -19,13 +19,13 @@ export const products = [
     new Apparels("Skinny Jeans", "Women", "Denim", "549", "Blue", "Stylish skinny jeans with a stretchable fit.", "blue_skinny_denim_jeans.jpg"),
     new Apparels("Crop Top", "Women", "Polyester", "199", "White", "Trendy crop top with a round neck, ideal for casual outings.", "white_crop_top.jpg"),
     new Apparels("Long Cardigan", "Women", "Wool", "699", "Beige", "Cozy long cardigan to keep you warm during chilly days.", "beige_long_cardigan.jpg"),
-    new Apparels("Ankle Boots", "Women", "Leather", "799", "Brown","Stylish leather ankle boots with a block heel.", ""),
+    new Apparels("Ankle Boots", "Women", "Leather", "799", "Brown","Stylish leather ankle boots with a block heel.", "brown_boots.jpg"),
     new Apparels("Maxi Skirt", "Women", "Chiffon", "399", "Red", "Flowy chiffon maxi skirt with an elegant design.", "red_maxi_skirt.jpg"),
     new Apparels("Cartoon T-Shirt", "Kids", "Cotton", "149", "Yellow", "Fun and comfortable T-shirt featuring a cute cartoon print.", "yellow_cartoon_tshirt.jpg"),
     new Apparels("Denim Shorts", "Kids", "Denim", "249", "Light Blue", "Classic denim shorts with a soft waistband for extra comfort.", "light_blue_denim_shorts.jpg"),
     new Apparels("Hooded Jacket", "Kids", "Fleece", "349", "Red", "Warm and stylish hoodie with a zip closure.", "red_hooded_jackets.jpg"),
     new Apparels("Summer Dress", "Kids", "Cotton", "299", "Purple", "Lightweight summer dress with cute floral patterns.", "purple_summer_dress.jpg"),
-    new Apparels("Velcro Sneakers", "Kids", "Synthetic", "199", "White", "Easy-to-wear velcro sneakers for active kids.", ""),
+    new Apparels("Velcro Sneakers", "Kids", "Synthetic", "199", "White", "Easy-to-wear velcro sneakers for active kids.", "white_sneakers.jpg"),
     new Apparels("Printed Pajamas", "Kids", "Cotton", "249", "Blue", "Soft and comfy pajama set with fun printed patterns.", "blue_printed_pajamas.jpg")
   ]
 
@@ -49,9 +49,20 @@ getRandomSizes(); // Example Output: ["M", "XL"]
 
 export const size = getRandomSizes();
 
-export const colourFilterProductsArray = (product) => {
-  return products.filter((item)=>item.colour.includes(product))
+export const colourFilterProductsArray = (product,category) => {
+  return products.filter((item)=>item.colour.includes(product) && item.category === category)
 }
+
+export const categoryArray = (product) => {
+  return products.filter((item)=>item.category === product)
+}
+
+
+ let w = (categoryArray("Women"));
+ console.log(w)
+ export const wf = colourFilterProductsArray("White","Women")
+ console.log(wf)
+
 
 export const sortProductsByPrice = (order = "asc") => {
   return [...products].sort((a, b) => 
