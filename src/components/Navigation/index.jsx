@@ -4,17 +4,19 @@ import { uniqueCategories } from '../../data/data'
 import NavMenu from '../NavMenu'
 import Hamburger from 'hamburger-react'
 
-const Navigation = ({selectedPage,selectedProduct,selectColour}) => {
+const Navigation = ({selectedPage,selectedProduct,selectColour,selectPrice}) => {
     const handleClick = (item) => {
         selectedPage(item)
         selectedProduct(null)
         selectColour(null)
+        selectPrice(null)
     }
 
     const handleHome = () => {
         selectedPage(null)
         selectedProduct(null)
         selectColour(null)
+        selectPrice(null)
     }
 
     const [isOpen, setIsOpen] = useState(false)

@@ -8,6 +8,7 @@ import WomenMain from './components/MainPages/WomenMain'
 import ProductDisplay from './components/ProductDisplay'
 import FilterProducts from './components/FilterProducts'
 import { colourFilterProductsArray,sortProductsByLowPrice} from './data/data'
+import SortInOrder from './components/SortInOrder'
 
 function App() {
   const [showPage, setShowPage] = useState(null)
@@ -18,49 +19,55 @@ function App() {
   const [sortedProducts, setSortedProducts] = useState([]);
     
   const price = (item) => {
-    const sortedArray = sortProductsByLowPrice(showPage, setSortByLowPrice(item)); // Get sorted array
+    const sortedArray = sortProductsByLowPrice(showPage,item); // Get sorted array
     setSortedProducts(sortedArray); 
+    setSortByLowPrice(item)
+    console.log(sortedArray)
   }
 
-  
+ 
   return (
     <>
-      <Navigation selectedPage={setShowPage} selectedProduct={setProductDetails} selectColour={setShowFilterProduct}/>
+      <Navigation selectedPage={setShowPage} selectedProduct={setProductDetails} selectColour={setShowFilterProduct} selectPrice={price}/>
       <Header />
       <div className='main'>
-      {showPage}
-      {sortByLowPrice}
+      
       {!productDetails && 
-
       <>
         {!showPage && <HomeMain />}
 
-        {showPage === "Kids" && !showFilterProduct && 
+        {showPage === "Kids" && !showFilterProduct && !sortByLowPrice &&
           <KidsMain clickedProduct={setProductDetails}
                     selectedPage= {setShowPage} 
                     selectColour = {setShowFilterProduct}
                     selectPrice = {price}
-                    newArray = {sortedProducts}/>}
+                  />}
 
-        {showPage === "Men" && !showFilterProduct &&
+        {showPage === "Men" && !showFilterProduct && !sortByLowPrice &&
           <MenMain clickedProduct = {setProductDetails}
                     selectedPage= {setShowPage} 
-                    selectColour = {setShowFilterProduct}/>}
+                    selectColour = {setShowFilterProduct}
+                    selectPrice = {price}/>}
 
-        {showPage === "Women" && !showFilterProduct && 
+        {showPage === "Women" && !showFilterProduct && !sortByLowPrice &&
           <WomenMain clickedProduct={setProductDetails} 
                       selectedPage= {setShowPage} 
                       selectColour = {setShowFilterProduct}
-                      />}
+                      selectPrice = {price}/>}
       </>
       }
-      {productDetails &&  <ProductDisplay displayProduct={productDetails}/>}
+      {productDetails &&   <ProductDisplay displayProduct={productDetails}/>}
 
       {!productDetails && showFilterProduct  &&(
         <>
           <FilterProducts clickedProduct={setProductDetails} displayFilterProducts={colourFilterProductsArray(showFilterProduct,showPage)} />
         </>
       )}
+      
+      {sortByLowPrice && !showFilterProduct && !productDetails && 
+      <SortInOrder newArray={sortedProducts} clickedProduct={setProductDetails} selectColour={setShowFilterProduct}/> } 
+  
+     
 </div>
 
     </>

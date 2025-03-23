@@ -59,7 +59,7 @@ export const categoryArray = (product) => {
 
 export const sortProductsByLowPrice = (category,order) => {
   return [...products.filter(item => item.category === category)].sort((a, b) => 
-    order === "asc" ? Number(b.price) - Number(a.price) : Number(a.price) - Number(b.price)
+    order === "asc" ? Number(a.price) - Number(b.price) : Number(b.price) - Number(a.price)
   )
 };
 

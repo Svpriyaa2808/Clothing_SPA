@@ -1,0 +1,33 @@
+.price_filter {
+    margin: 16px;
+    display: flex;
+    justify-content: flex-end;
+    overflow: hidden;
+}
+
+.price_filter_button {
+    margin: 16px;
+    display: flex;
+    font-size: 1rem;
+    font-weight: lighter;
+    cursor: pointer;
+    position: relative;
+    background-color: black;
+    color: white;
+}
+
+.price_filter_button p {
+    margin-left: 8px;
+    font-size: 1rem;
+}
+
+.price_filter_button svg {
+    margin: 16px;
+}
+
+@media screen and (max-width:768px) {
+    .price_filter {
+        display: block;
+    }
+    
+}

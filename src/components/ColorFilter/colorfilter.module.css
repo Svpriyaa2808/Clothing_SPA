@@ -4,20 +4,32 @@
 }
 
 .button {
+    margin: 16px;
     display: flex;
     font-size: 1rem;
     font-weight: lighter;
     cursor: pointer;
-    position: relative;
     background-color: black;
     color: white;
 }
 
+.colour_filter {
+    position: relative;
+}
+
 .button p {
     margin-left: 8px;
-    font-size: 1.2rem;
+    font-size: 1rem;
 }
 
 .button svg {
     margin: 16px;
+}
+
+@media screen and (max-width:768px) {
+
+    .filter {
+        justify-items: flex-start;
+    }
+    
 }
