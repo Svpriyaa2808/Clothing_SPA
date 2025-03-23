@@ -9,6 +9,7 @@ import ProductDisplay from './components/ProductDisplay'
 import FilterProducts from './components/FilterProducts'
 import { colourFilterProductsArray,sortProductsByLowPrice} from './data/data'
 import SortInOrder from './components/SortInOrder'
+import Footer from './components/Footer'
 
 function App() {
   const [showPage, setShowPage] = useState(null)
@@ -32,43 +33,43 @@ function App() {
       <Header />
       <div className='main'>
       
-      {!productDetails && 
-      <>
-        {!showPage && <HomeMain />}
+        {!productDetails && 
+        <>
+          {!showPage && <HomeMain />}
 
-        {showPage === "Kids" && !showFilterProduct && !sortByLowPrice &&
-          <KidsMain clickedProduct={setProductDetails}
-                    selectedPage= {setShowPage} 
-                    selectColour = {setShowFilterProduct}
-                    selectPrice = {price}
-                  />}
+          {showPage === "Kids" && !showFilterProduct && !sortByLowPrice &&
+            <KidsMain clickedProduct={setProductDetails}
+                      selectedPage= {setShowPage} 
+                      selectColour = {setShowFilterProduct}
+                      selectPrice = {price}
+                    />}
 
-        {showPage === "Men" && !showFilterProduct && !sortByLowPrice &&
-          <MenMain clickedProduct = {setProductDetails}
-                    selectedPage= {setShowPage} 
-                    selectColour = {setShowFilterProduct}
-                    selectPrice = {price}/>}
-
-        {showPage === "Women" && !showFilterProduct && !sortByLowPrice &&
-          <WomenMain clickedProduct={setProductDetails} 
+          {showPage === "Men" && !showFilterProduct && !sortByLowPrice &&
+            <MenMain clickedProduct = {setProductDetails}
                       selectedPage= {setShowPage} 
                       selectColour = {setShowFilterProduct}
                       selectPrice = {price}/>}
-      </>
-      }
-      {productDetails &&   <ProductDisplay displayProduct={productDetails}/>}
 
-      {!productDetails && showFilterProduct  &&(
-        <>
-          <FilterProducts clickedProduct={setProductDetails} displayFilterProducts={colourFilterProductsArray(showFilterProduct,showPage)} />
+          {showPage === "Women" && !showFilterProduct && !sortByLowPrice &&
+            <WomenMain clickedProduct={setProductDetails} 
+                        selectedPage= {setShowPage} 
+                        selectColour = {setShowFilterProduct}
+                        selectPrice = {price}/>}
         </>
-      )}
+        }
+        {productDetails &&   <ProductDisplay displayProduct={productDetails}/>}
+
+        {!productDetails && showFilterProduct  &&(
+          <>
+            <FilterProducts clickedProduct={setProductDetails} displayFilterProducts={colourFilterProductsArray(showFilterProduct,showPage)} />
+          </>
+        )}
+        
+        {sortByLowPrice && !showFilterProduct && !productDetails && 
+        <SortInOrder newArray={sortedProducts} clickedProduct={setProductDetails} selectColour={setShowFilterProduct}/> } 
+      </div>
       
-      {sortByLowPrice && !showFilterProduct && !productDetails && 
-      <SortInOrder newArray={sortedProducts} clickedProduct={setProductDetails} selectColour={setShowFilterProduct}/> } 
-  
-     
-</div>
+      <Footer />
 
     </>
     

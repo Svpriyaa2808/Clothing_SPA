@@ -4,7 +4,7 @@ state function if needed - completed
 
 Align the filterproduct page completed
 give link to productdisplay from filtered productdisplay completed
-sort by price high to low and low to high
+sort by price high to low and low to high completed
 try filter by fabric 
 homepage content
 Footer content
