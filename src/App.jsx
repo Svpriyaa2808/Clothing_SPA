@@ -7,21 +7,29 @@ import MenMain from './components/MainPages/MenMain'
 import WomenMain from './components/MainPages/WomenMain'
 import ProductDisplay from './components/ProductDisplay'
 import FilterProducts from './components/FilterProducts'
-import { colourFilterProductsArray} from './data/data'
+import { colourFilterProductsArray,sortProductsByLowPrice} from './data/data'
 
 function App() {
   const [showPage, setShowPage] = useState(null)
   const [productDetails, setProductDetails] = useState(null)
   const [showFilterProduct,setShowFilterProduct] = useState(null)
-  const [sortByPrice,setSortByPrice] = useState(null)
- 
+  
+  const [sortByLowPrice,setSortByLowPrice] = useState(null)
+  const [sortedProducts, setSortedProducts] = useState([]);
+    
+  const price = (item) => {
+    const sortedArray = sortProductsByLowPrice(showPage, setSortByLowPrice(item)); // Get sorted array
+    setSortedProducts(sortedArray); 
+  }
+
+  
   return (
     <>
-   
       <Navigation selectedPage={setShowPage} selectedProduct={setProductDetails} selectColour={setShowFilterProduct}/>
       <Header />
       <div className='main'>
-        
+      {showPage}
+      {sortByLowPrice}
       {!productDetails && 
 
       <>
@@ -30,7 +38,9 @@ function App() {
         {showPage === "Kids" && !showFilterProduct && 
           <KidsMain clickedProduct={setProductDetails}
                     selectedPage= {setShowPage} 
-                    selectColour = {setShowFilterProduct}/>}
+                    selectColour = {setShowFilterProduct}
+                    selectPrice = {price}
+                    newArray = {sortedProducts}/>}
 
         {showPage === "Men" && !showFilterProduct &&
           <MenMain clickedProduct = {setProductDetails}
@@ -40,7 +50,8 @@ function App() {
         {showPage === "Women" && !showFilterProduct && 
           <WomenMain clickedProduct={setProductDetails} 
                       selectedPage= {setShowPage} 
-                      selectColour = {setShowFilterProduct}/>}
+                      selectColour = {setShowFilterProduct}
+                      />}
       </>
       }
       {productDetails &&  <ProductDisplay displayProduct={productDetails}/>}

@@ -57,28 +57,21 @@ export const categoryArray = (product) => {
   return products.filter((item)=>item.category === product)
 }
 
-
- let w = (categoryArray("Women"));
- console.log(w)
- export const wf = colourFilterProductsArray("White","Women")
- console.log(wf)
-
-
-export const sortProductsByPrice = (order = "asc") => {
-  return [...products].sort((a, b) => 
-    order === "asc" ? Number(a.price) - Number(b.price) : Number(b.price) - Number(a.price)
-  );
+export const sortProductsByLowPrice = (category,order) => {
+  return [...products.filter(item => item.category === category)].sort((a, b) => 
+    order === "asc" ? Number(b.price) - Number(a.price) : Number(a.price) - Number(b.price)
+  )
 };
 
-export const sortedAsc = sortProductsByPrice(products, "asc");  // Low to High
+export const sortedAsc = sortProductsByLowPrice("asc");  // Low to High
 console.log(sortedAsc);
 
-export const ascPrice = [...new Set(sortedAsc.map(item => item.price))]
+// export const ascPrice = [...new Set(sortedAsc.map(item => item.price))]
 
 
 
-const sortedDesc = sortProductsByPrice(products, "desc"); // High to Low
-console.log(sortedDesc);
+// const sortedDesc = sortProductsByPrice(products, "desc"); // High to Low
+// console.log(sortedDesc);
 
 
 
