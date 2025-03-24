@@ -28,6 +28,10 @@ const Footer = () => {
                 <p>Become a member and take advantage of fantastic offers!</p>
             </div>
             </div>
+            <div className={styles.icon_wrapper}>
+                <div className={styles.copyrights}>
+                    <p>All Rights Reserved</p>
+                </div>
             <div className={styles.social_icons}>
             <SocialLogo icon="facebook" size={ 36 } />
             <SocialLogo icon="mail" size={ 36 } />
@@ -35,6 +39,7 @@ const Footer = () => {
             <SocialLogo icon="instagram" size={ 36 } />
             <SocialLogo icon="youtube" size={ 36 } />
             <SocialLogo icon="pinterest" size={ 36 } />
+            </div>
             </div>
         </footer>
     )

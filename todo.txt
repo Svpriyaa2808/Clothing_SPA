@@ -7,5 +7,5 @@ give link to productdisplay from filtered productdisplay completed
 sort by price high to low and low to high completed
 try filter by fabric 
 homepage content
-Footer content
+Footer content completed
 search field

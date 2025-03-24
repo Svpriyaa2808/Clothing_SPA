@@ -11,6 +11,7 @@
 
 .information {
     margin: 16px;
+    flex: 1 0 25%;
 }
 
 .information h4 {
@@ -27,11 +28,41 @@
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
+.icon_wrapper {
+    margin-bottom: 0;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.copyrights {
+    margin: 8px;
+    font-size: 1.2rem;
+}
+
 .social_icons {
+    flex: 1;
     margin: 16px;
     text-align: end;
 }
 
 .social_icons svg{
     fill: white;
+}
+
+@media screen and (max-width : 500px) {
+    .footer_info {
+        display: block;
+    }
+
+    .information {
+        margin-bottom: 32px;
+    }
+
+    .information h4 {
+        margin-bottom: 16px;
+    }
+
+    .social_icons svg {
+        width: 24px;
+    }
 }
