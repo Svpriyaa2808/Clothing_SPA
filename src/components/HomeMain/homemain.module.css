@@ -1,0 +1,39 @@
+.home_image_container img{
+    width: 100%;
+    height: auto;
+}
+
+.limited_collection_info {
+    margin: 32px 56px;
+    width: 700px;
+}
+
+.limited_collection_info h2 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 16px;
+}
+
+.limited_collection_info p {
+    font-size: 1.2rem;
+}
+
+.spring_collection_details {
+    display: flex;
+    height: 100%;
+}
+
+.spring_collection_image {
+    background-image: url('src/assets/kids_collection.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    flex: 1 0 50%;
+}
+
+.spring_collection_info {
+    background-color: beige;
+    height: 1000px;
+    flex: 1 0 50%;
+}
+
