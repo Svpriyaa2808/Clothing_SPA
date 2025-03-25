@@ -1,17 +1,16 @@
 .price_filter {
     margin: 16px;
-    display: flex;
-    justify-content: flex-end;
-    overflow: hidden;
+    /* display: flex;
+    justify-content: flex-end; */
 }
 
 .price_filter_button {
     margin: 16px;
-    display: flex;
+    /* display: flex; */
     font-size: 1rem;
     font-weight: lighter;
     cursor: pointer;
-    position: relative;
+    height: 60px;
     background-color: black;
     color: white;
 }

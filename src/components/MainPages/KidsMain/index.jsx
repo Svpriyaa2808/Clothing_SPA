@@ -9,7 +9,7 @@ const KidsMain = ({clickedProduct,selectedPage,selectColour,selectPrice}) => {
         <>
         <div className={styles.filter_buttons}>
             <PriceFilter lowPriceFilter={selectPrice}/>
-            <ColourFilter chooseColour={selectColour} choosePage={selectedPage}/>
+            <ColourFilter  chooseColour={selectColour} choosePage={selectedPage}/>
         </div>
         <div className={styles.product_container}>
             {kidsCategories.map((item,index)=> 

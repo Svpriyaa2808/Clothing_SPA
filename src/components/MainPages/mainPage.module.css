@@ -1,7 +1,6 @@
 .filter_buttons {
     display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
+    justify-content: space-around;
 }
 
 .product_container {
