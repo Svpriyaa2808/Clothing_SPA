@@ -6,6 +6,6 @@ Align the filterproduct page completed
 give link to productdisplay from filtered productdisplay completed
 sort by price high to low and low to high completed
 try filter by fabric 
-homepage content
+homepage content - try as giving image in index
 Footer content completed
 search field

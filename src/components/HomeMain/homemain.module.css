@@ -5,11 +5,11 @@
 
 .limited_collection_info {
     margin: 32px 56px;
-    width: 700px;
+    width: 50%;
 }
 
 .limited_collection_info h2 {
-    font-size: 3rem;
+    font-size: 2.6rem;
     font-weight: bold;
     margin-bottom: 16px;
 }
@@ -18,22 +18,78 @@
     font-size: 1.2rem;
 }
 
-.spring_collection_details {
+.collection_details {
     display: flex;
-    height: 100%;
+    margin-bottom: 16px;
 }
 
-.spring_collection_image {
-    background-image: url('src/assets/kids_collection.jpeg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+.image_container {
     flex: 1 0 50%;
 }
 
-.spring_collection_info {
-    background-color: beige;
-    height: 1000px;
-    flex: 1 0 50%;
+.image_container img {
+    width: 100%;
 }
+
+.details_info {
+    flex: 1 0 50%;
+    background-color: #faf4ec;
+    position: relative;
+    margin-bottom: 4px;
+}
+
+.details {
+    /* position: absolute; */
+    margin-top: 25%;
+    margin-left: 16px;
+
+}
+
+.details h2 {
+    font-size: 4rem;
+    margin-bottom: 0;
+}
+
+.details p {
+    font-size: 1.6rem;
+}
+
+@media screen and (max-width : 768px) {
+   
+    .details {
+        position: relative;
+    }
+
+    .details h2 {
+        font-size: 2rem;
+    }
+
+    .details p {
+        margin: 16px;
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width : 600px) {
+
+    .limited_collection_info {
+        margin: 32px;
+        width: fit-content;
+    }
+
+    .collection_details {
+        flex-direction: column;
+        border-bottom: 2px solid #faf4ec;
+    }
+    
+    .details_info {
+        margin-top: 0;
+        background-color: white;
+    }
+
+    .details {
+        margin-top: 8px;
+    }
+}
+
 
