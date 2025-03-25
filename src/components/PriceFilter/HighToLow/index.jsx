@@ -4,7 +4,7 @@ import { SortDescending} from '@phosphor-icons/react'
 const HighToLow = ({lowPriceFilter}) => {
 
     const handleHighPrice = () => {
-        lowPriceFilter("des")
+        lowPriceFilter("desc")
     }
 
     return (

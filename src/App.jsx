@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { use, useState } from 'react'
 import Header from './components/Header'
 import HomeMain from './components/HomeMain'
 import Navigation from './components/Navigation'
@@ -22,11 +22,10 @@ function App() {
   const price = (item) => {
     const sortedArray = sortProductsByLowPrice(showPage,item); // Get sorted array
     setSortedProducts(sortedArray); 
-    setSortByLowPrice(item)
+    setSortByLowPrice(item) 
     console.log(sortedArray)
   }
 
- 
   return (
     <>
       <Navigation selectedPage={setShowPage} selectedProduct={setProductDetails} selectColour={setShowFilterProduct} selectPrice={price}/>
@@ -37,20 +36,20 @@ function App() {
         <>
           {!showPage && <HomeMain />}
 
-          {showPage === "Kids" && !showFilterProduct && !sortByLowPrice &&
+          {showPage === "Kids" && !showFilterProduct && !sortByLowPrice && 
             <KidsMain clickedProduct={setProductDetails}
                       selectedPage= {setShowPage} 
                       selectColour = {setShowFilterProduct}
                       selectPrice = {price}
                     />}
 
-          {showPage === "Men" && !showFilterProduct && !sortByLowPrice &&
+          {showPage === "Men" && !showFilterProduct && !sortByLowPrice && 
             <MenMain clickedProduct = {setProductDetails}
                       selectedPage= {setShowPage} 
                       selectColour = {setShowFilterProduct}
                       selectPrice = {price}/>}
 
-          {showPage === "Women" && !showFilterProduct && !sortByLowPrice &&
+          {showPage === "Women" && !showFilterProduct && !sortByLowPrice && 
             <WomenMain clickedProduct={setProductDetails} 
                         selectedPage= {setShowPage} 
                         selectColour = {setShowFilterProduct}
@@ -67,6 +66,7 @@ function App() {
         
         {sortByLowPrice && !showFilterProduct && !productDetails && 
         <SortInOrder newArray={sortedProducts} clickedProduct={setProductDetails} selectColour={setShowFilterProduct}/> } 
+
       </div>
       
       <Footer />

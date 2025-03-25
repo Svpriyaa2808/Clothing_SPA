@@ -63,22 +63,3 @@ export const sortProductsByLowPrice = (category,order) => {
   )
 };
 
-export const sortedAsc = sortProductsByLowPrice("asc");  // Low to High
-console.log(sortedAsc);
-
-// export const ascPrice = [...new Set(sortedAsc.map(item => item.price))]
-
-
-
-// const sortedDesc = sortProductsByPrice(products, "desc"); // High to Low
-// console.log(sortedDesc);
-
-
-
-
-// const white = products.filter((item) => 
-//   item.colour.includes("Blue"))
-
-
-
-// console.log(white)
