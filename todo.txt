@@ -6,7 +6,9 @@ Align the filterproduct page completed
 give link to productdisplay from filtered productdisplay completed
 sort by price high to low and low to high completed
 homepage content - try as giving image in index - completed
-Footer content completed
+Footer content - completed
+
 search field
-filter button alignment
+filter button alignment - completed for colours
+want to do high to low different component completed
 code refactor

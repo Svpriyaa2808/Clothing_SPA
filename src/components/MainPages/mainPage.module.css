@@ -30,11 +30,14 @@
 }
 
 @media screen and (max-width:768px) {
-    .filter_buttons {
-        display: block;
-    }
-
    .display_container {
     flex: 1 0 50%;
    } 
+}
+
+@media screen and (max-width:500px) {
+    .filter_buttons {
+        display: flex;
+        flex-wrap: wrap;
+    }
 }

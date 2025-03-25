@@ -2,15 +2,16 @@ import styles from '../mainPage.module.css'
 import { womenCategories } from '../../../data/data'
 import { getImageUrl } from '../../../utils/function'
 import ColourFilter from '../../ColorFilter'
-import PriceFilter from '../../PriceFilter'
-
+import LowToHigh from '../../PriceFilter/LowToHigh'
+import HighToLow from '../../PriceFilter/HighToLow'
 
 const WomenMain = ({clickedProduct,selectedPage,selectColour,selectPrice}) => {
 
     return (
         <>
            <div className={styles.filter_buttons}>
-            <PriceFilter lowPriceFilter={selectPrice}/>
+            <LowToHigh  lowPriceFilter={selectPrice}/>
+            <HighToLow lowPriceFilter={selectPrice} />
             <ColourFilter chooseColour={selectColour} choosePage={selectedPage}/>
             </div>
             <div className={styles.product_container}>
