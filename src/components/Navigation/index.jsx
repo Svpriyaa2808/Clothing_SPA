@@ -3,8 +3,9 @@ import styles from './navigation.module.css'
 import { uniqueCategories } from '../../data/data'
 import NavMenu from '../NavMenu'
 import Hamburger from 'hamburger-react'
+import Search from '../SearchIcons'
 
-const Navigation = ({selectedPage,selectedProduct,selectColour,selectPrice}) => {
+const Navigation = ({selectedPage,selectedProduct,selectColour,selectPrice,input}) => {
     const handleClick = (item) => {
         selectedPage(item)
         selectedProduct(null)
@@ -37,11 +38,15 @@ const Navigation = ({selectedPage,selectedProduct,selectColour,selectPrice}) => 
             </div>
             </>
         }
-
+        <div className={styles.navbar}>
         <div className={styles.links}>
             <NavMenu menu= "Home" onClick={handleHome} />
             {uniqueCategories.map((item,index)=> <NavMenu key={index} menu={item} onClick={()=>handleClick(item)}/>)}
         </div>
+        <div className={styles.search_icons}>
+        <Search type={input}/>
+        </div>
+        </div>  
         </div>
     )
 }

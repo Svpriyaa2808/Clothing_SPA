@@ -1,6 +1,4 @@
 .nav {
-    display: flex;
-    justify-content: right;
     margin: 8px;
 }
 
@@ -10,6 +8,22 @@
 
 .hamburger_links {
     display: none;
+}
+
+.links {
+    display: flex;
+    flex: 1 0 60%;
+    justify-content: space-evenly;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.search_icons {
+    flex:1 0 40%;
+    justify-items: flex-end;
 }
 
 @media screen and (max-width: 500px) {

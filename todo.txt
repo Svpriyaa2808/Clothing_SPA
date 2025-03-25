@@ -8,7 +8,7 @@ sort by price high to low and low to high completed
 homepage content - try as giving image in index - completed
 Footer content - completed
 
-search field
+search field - want to create function in data for loop through the products name and want to display the products
 filter button alignment - completed for colours
 want to do high to low different component completed
 code refactor

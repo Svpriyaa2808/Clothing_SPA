@@ -1,0 +1,10 @@
+.icons {
+    margin-top: 8px;
+    display: flex;
+    gap: 8px;
+}
+
+.icons svg {
+    fill: #960200;
+    cursor: pointer;
+}
