@@ -15,7 +15,7 @@ function App() {
   const [showPage, setShowPage] = useState(null)
   const [productDetails, setProductDetails] = useState(null)
   const [showFilterProduct,setShowFilterProduct] = useState(null)
-  const [search,setSearch] = useState(null)
+  // const [search,setSearch] = useState(null)
   const [sortByLowPrice,setSortByLowPrice] = useState(null)
   const [sortedProducts, setSortedProducts] = useState([]);
     
@@ -31,8 +31,7 @@ function App() {
       <Navigation selectedPage={setShowPage} 
                   selectedProduct={setProductDetails} 
                   selectColour={setShowFilterProduct} 
-                  selectPrice={price} 
-                  input={setSearch}/>
+                  selectPrice={price} />
                   
       <Header />
       <div className='main'>
