@@ -1,6 +1,6 @@
 .search_result_container {
     position: absolute;
-    top: 10%;
+    top: 8%;
     left: 85%;
     background-color: white;
     width: 170px;  
@@ -12,4 +12,20 @@
     border-bottom: 1px solid gray;
     cursor: pointer;
     z-index: 100;
+}
+
+@media screen and (max-width:768px) {
+
+    .search_result_container {
+        top: 5%;
+        left: 70%;
+    }
+    
+}
+
+@media screen and (max-width:390px) {
+    .search_result_container {
+        top: 15%;
+        left: 37%;
+    }
 }

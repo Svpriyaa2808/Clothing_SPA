@@ -27,7 +27,7 @@ const Navigation = ({selectedPage,selectedProduct,selectColour,selectPrice,userI
     return (
         <div className={styles.nav}>
             <div className={styles.hamburger}>
-            <Hamburger toggled={isOpen} toggle={setIsOpen} />
+            <Hamburger toggled={isOpen} toggle={setIsOpen} onToggle={()=>userInput("")}/>
         </div>
 
         {isOpen && 

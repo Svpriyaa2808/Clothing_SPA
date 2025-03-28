@@ -29,4 +29,7 @@
         display: block;
     }
     
+    .price_filter_button p {
+        font-size: .8rem;
+    }
 }
