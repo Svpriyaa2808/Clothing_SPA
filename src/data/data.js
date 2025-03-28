@@ -63,3 +63,10 @@ export const sortProductsByLowPrice = (category,order) => {
   )
 };
 
+export const SearchQuery = (query) => {
+  return products.filter((item)=>item.name.toLowerCase().includes(query))
+}
+
+const A = SearchQuery("A")
+console.log(A)
+

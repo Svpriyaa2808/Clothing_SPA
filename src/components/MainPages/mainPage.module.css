@@ -1,6 +1,6 @@
 .filter_buttons {
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-start;
 }
 
 .product_container {
@@ -33,11 +33,11 @@
    .display_container {
     flex: 1 0 50%;
    } 
+
+   .filter_buttons {
+    display: flex;
+    flex-direction: column;
+    width: 160px;
+}
 }
 
-@media screen and (max-width:500px) {
-    .filter_buttons {
-        display: flex;
-        flex-wrap: wrap;
-    }
-}

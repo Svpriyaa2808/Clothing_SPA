@@ -1,4 +1,4 @@
-import { use, useState } from 'react'
+import { useState } from 'react'
 import Header from './components/Header'
 import HomeMain from './components/HomeMain'
 import Navigation from './components/Navigation'
@@ -7,15 +7,16 @@ import MenMain from './components/MainPages/MenMain'
 import WomenMain from './components/MainPages/WomenMain'
 import ProductDisplay from './components/ProductDisplay'
 import FilterProducts from './components/FilterProducts'
-import { colourFilterProductsArray,sortProductsByLowPrice} from './data/data'
+import { colourFilterProductsArray,sortProductsByLowPrice,SearchQuery} from './data/data'
 import SortInOrder from './components/SortInOrder'
+import ShowSearch from './components/ShowSearchNames'
 import Footer from './components/Footer'
 
 function App() {
   const [showPage, setShowPage] = useState(null)
   const [productDetails, setProductDetails] = useState(null)
   const [showFilterProduct,setShowFilterProduct] = useState(null)
-  // const [search,setSearch] = useState(null)
+  const [inputValue,setInputValue] = useState("")
   const [sortByLowPrice,setSortByLowPrice] = useState(null)
   const [sortedProducts, setSortedProducts] = useState([]);
     
@@ -26,12 +27,16 @@ function App() {
     console.log(sortedArray)
   }
 
+ 
+
   return (
     <>
       <Navigation selectedPage={setShowPage} 
                   selectedProduct={setProductDetails} 
                   selectColour={setShowFilterProduct} 
-                  selectPrice={price} />
+                  selectPrice={price} 
+                  userInput={setInputValue}/>
+      {inputValue && <ShowSearch query={SearchQuery(inputValue.toLowerCase())} selectValue={setInputValue} displayProduct={setProductDetails}/>}
                   
       <Header />
       <div className='main'>

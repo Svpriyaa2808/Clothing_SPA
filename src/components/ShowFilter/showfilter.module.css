@@ -1,9 +1,13 @@
 .colours {
-    margin: 0 16px;
+    position: absolute;
+    margin: 8px 0;
     background-color: black;
     color: white;
-    width: 100%;
+    width: 115px;
+    top: 100%;
+    right: 0;
     max-height: fit-content;
+    transition: all linear 2s;
 }
 
 .colour_names {

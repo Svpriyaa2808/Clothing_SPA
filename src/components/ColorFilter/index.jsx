@@ -15,8 +15,9 @@ const ColourFilter = ({chooseColour}) => {
             <button className={`${styles.colour_filter} ${styles.button} `} onClick={handleFilter}>
                 <p>Filter</p>
                 <Funnel size={24} />
-            </button>
-        {showColourFilter && <ShowFilter filteredColour={chooseColour}  />}   
+           
+        {showColourFilter && <ShowFilter filteredColour={chooseColour}  />} 
+        </button>  
         </>
     )
 }

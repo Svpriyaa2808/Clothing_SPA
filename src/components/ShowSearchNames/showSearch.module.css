@@ -1,0 +1,15 @@
+.search_result_container {
+    position: absolute;
+    top: 10%;
+    left: 85%;
+    background-color: white;
+    width: 170px;  
+}
+
+.search_result_container p {
+    color: #960200;
+    margin: 16px;
+    border-bottom: 1px solid gray;
+    cursor: pointer;
+    z-index: 100;
+}

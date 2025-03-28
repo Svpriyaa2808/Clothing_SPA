@@ -5,12 +5,13 @@ import NavMenu from '../NavMenu'
 import Hamburger from 'hamburger-react'
 import Search from '../SearchIcons'
 
-const Navigation = ({selectedPage,selectedProduct,selectColour,selectPrice}) => {
+const Navigation = ({selectedPage,selectedProduct,selectColour,selectPrice,userInput}) => {
     const handleClick = (item) => {
         selectedPage(item)
         selectedProduct(null)
         selectColour(null)
         selectPrice(null)
+        userInput("")
     }
 
     const handleHome = () => {
@@ -18,6 +19,7 @@ const Navigation = ({selectedPage,selectedProduct,selectColour,selectPrice}) => 
         selectedProduct(null)
         selectColour(null)
         selectPrice(null)
+        userInput("")
     }
 
     const [isOpen, setIsOpen] = useState(false)
@@ -44,7 +46,7 @@ const Navigation = ({selectedPage,selectedProduct,selectColour,selectPrice}) => 
             {uniqueCategories.map((item,index)=> <NavMenu key={index} menu={item} onClick={()=>handleClick(item)}/>)}
         </div>
         <div className={styles.search_icons}>
-        <Search />
+        <Search searchProduct={userInput}/>
         </div>
         </div>  
         </div>
