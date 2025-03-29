@@ -1,9 +1,12 @@
 .search_result_container {
     position: absolute;
-    top: 8%;
-    left: 85%;
+    margin: 8px 0;
+    width: 150px;
     background-color: white;
-    width: 170px;  
+    top: 4%;
+    right: 5%;
+    max-height: fit-content;
+    transition: all linear 2s; 
 }
 
 .search_result_container p {
@@ -18,14 +21,15 @@
 
     .search_result_container {
         top: 5%;
-        left: 70%;
+        right: 10%;
     }
     
 }
 
-@media screen and (max-width:390px) {
+@media screen and (max-width:500px) {
     .search_result_container {
+        position: absolute;
         top: 10%;
-        left: 35%;
+        right: 25%;
     }
-}
+} 

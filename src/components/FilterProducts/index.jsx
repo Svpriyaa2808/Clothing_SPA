@@ -4,6 +4,7 @@ import { size } from '../../data/data'
 
 const FilterProducts = ({displayFilterProducts,clickedProduct}) => {
     console.log(displayFilterProducts)
+    
     return (
         <>
     

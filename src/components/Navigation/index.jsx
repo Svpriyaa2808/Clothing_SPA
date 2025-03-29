@@ -14,8 +14,9 @@ const Navigation = ({selectedPage,selectedProduct,selectColour,selectPrice,selec
         selectedProduct(null)
         selectColour(null)
         selectPrice(null)
-        userInput("")
         selectHighPrice(null)
+        userInput("")
+        setIsOpen(false)
     }
 
     const handleHome = () => {
@@ -23,15 +24,15 @@ const Navigation = ({selectedPage,selectedProduct,selectColour,selectPrice,selec
         selectedProduct(null)
         selectColour(null)
         selectPrice(null)
-        userInput("")
         selectHighPrice(null)
+        userInput("")
+        setIsOpen(false)
     }
-
     
     return (
         <div className={styles.nav}>
             <div className={styles.hamburger}>
-            <Hamburger toggle={setIsOpen} onToggle={()=>userInput("")}/>
+            <Hamburger toggled={isOpen} toggle={setIsOpen} onToggle={()=>userInput("")}/>
         </div>
 
         {isOpen && 
@@ -50,7 +51,7 @@ const Navigation = ({selectedPage,selectedProduct,selectColour,selectPrice,selec
             {uniqueCategories.map((item,index)=> <NavMenu key={index} menu={item} onClick={()=>handleClick(item)}/>)}
         </div>
         <div className={styles.search_icons}>
-        <Search searchProduct={userInput}/>
+        <Search clickedProduct = {selectedProduct} searchValue={userInput}/>
         </div>
         </div>  
         </div>
