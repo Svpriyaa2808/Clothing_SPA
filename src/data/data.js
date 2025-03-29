@@ -32,11 +32,6 @@ export const products = [
 export const uniqueCategories = [...new Set(products.map(item => item.category))]
 console.log(uniqueCategories)
 
-export const menCategories = products.filter((item)=>item.category === "Men")
-export const womenCategories = products.filter((item)=>item.category === "Women")
-export const kidsCategories = products.filter((item)=>item.category === "Kids")
-console.log(menCategories)
-
 export const colorFilter = [...new Set(products.map(item => item.colour.includes("Blue") ? "Blue" : item.colour))]
 console.log(colorFilter)
 
@@ -45,7 +40,7 @@ const sizes = ["XS ", "S ", "M ", "L ", "XL ", "XXL "];
 export const getRandomSizes = () => {
   return sizes.sort(() => 0.5 - Math.random()).slice(0, 2);
 };
-getRandomSizes(); // Example Output: ["M", "XL"]
+getRandomSizes();
 
 export const size = getRandomSizes();
 
@@ -59,9 +54,16 @@ export const categoryArray = (product) => {
 
 export const sortProductsByLowPrice = (category,order) => {
   return [...products.filter(item => item.category === category)].sort((a, b) => 
-    order === "asc" ? Number(a.price) - Number(b.price) : Number(b.price) - Number(a.price)
+    order === "asc" ?  Number(a.price) - Number(b.price) : Number(b.price) - Number(a.price)
   )
 };
+
+export const sortProductsByHighPrice = (category,order) => {
+  return [...products.filter(item => item.category === category)].sort((a, b) => 
+    order === "desc" ?  Number(b.price) - Number(a.price) :  Number(a.price) - Number(b.price)
+  )
+};
+
 
 export const SearchQuery = (query) => {
   return products.filter((item)=>item.name.toLowerCase().includes(query))

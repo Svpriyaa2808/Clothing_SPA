@@ -46,3 +46,9 @@
     font-size: 1.2rem;
     text-align: center;
 }
+
+@media screen and (max-width:500px) {
+    .filter_details h4 {
+        font-size: .8rem;
+    }
+}

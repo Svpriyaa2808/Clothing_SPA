@@ -1,17 +1,20 @@
+import LowToHigh from '../LowToHigh'
 import styles from '../pricefilter.module.css'
 import { SortDescending} from '@phosphor-icons/react'
 
-const HighToLow = ({lowPriceFilter}) => {
+const HighToLow = ({highPriceFilter}) => {
 
     const handleHighPrice = () => {
-        lowPriceFilter("desc")
+        highPriceFilter("desc")
     }
 
     return (
+        <>
         <button className={styles.price_filter_button} onClick={handleHighPrice}>
                 <p>High to Low</p>
                 <SortDescending size={24} />
             </button>
+        </>
     )
 }
 

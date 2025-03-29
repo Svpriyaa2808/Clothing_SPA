@@ -13,7 +13,7 @@ const LowToHigh = ({lowPriceFilter}) => {
                 <p>Low to High</p>
                 <SortAscending size={24} />
             </button>
-        
+            
         </>
     )
 }

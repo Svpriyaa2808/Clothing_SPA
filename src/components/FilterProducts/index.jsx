@@ -6,6 +6,7 @@ const FilterProducts = ({displayFilterProducts,clickedProduct}) => {
     console.log(displayFilterProducts)
     return (
         <>
+    
             {displayFilterProducts && displayFilterProducts.length > 0 ?
             <>
                 <div className={styles.filter_details}>

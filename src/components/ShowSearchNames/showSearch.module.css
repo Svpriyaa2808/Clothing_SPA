@@ -25,7 +25,7 @@
 
 @media screen and (max-width:390px) {
     .search_result_container {
-        top: 15%;
-        left: 37%;
+        top: 10%;
+        left: 35%;
     }
 }
