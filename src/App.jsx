@@ -25,6 +25,7 @@ function App() {
     setSortByHighPrice(null)
     setSortByLowPrice(item) 
     setInputValue(null)
+    setShowFilterProduct(null)
     console.log(sortedLowPriceArray)
   } 
 
@@ -34,6 +35,7 @@ function App() {
     setSortByHighPrice(item)
     setSortByLowPrice(null)
     setInputValue(null)
+    setShowFilterProduct(null)
     console.log(sortedHighPriceArray)
   }
 

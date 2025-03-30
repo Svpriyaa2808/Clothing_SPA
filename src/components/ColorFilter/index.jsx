@@ -3,7 +3,7 @@ import styles from './colorfilter.module.css'
 import { useState } from 'react'
 import ShowFilter from '../ShowFilter'
 
-const ColourFilter = ({chooseColour}) => {
+const ColourFilter = ({chooseColour,choosePage}) => {
     const[showColourFilter,setShowColourFilter] = useState(null)
 
     const handleFilter = () => {
@@ -16,7 +16,7 @@ const ColourFilter = ({chooseColour}) => {
                 <p>Filter</p>
                 <Funnel size={24} />
            
-        {showColourFilter && <ShowFilter filteredColour={chooseColour}  />} 
+        {showColourFilter && <ShowFilter filteredColour={chooseColour}  clickedPage={choosePage}/>} 
         </button>  
         </>
     )
