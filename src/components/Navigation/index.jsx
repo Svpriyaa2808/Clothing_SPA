@@ -5,27 +5,29 @@ import NavMenu from '../NavMenu'
 import Hamburger from 'hamburger-react'
 import Search from '../SearchIcons'
 
-const Navigation = ({selectedPage,selectedProduct,selectColour,selectPrice,selectHighPrice,userInput}) => {
+const Navigation = ({selectedPage,selectedProduct,selectedColourProduct,selectPrice,selectHighPrice,userInput,selectColour}) => {
     
     const [isOpen, setIsOpen] = useState(false)
 
     const handleClick = (item) => {
         selectedPage(item)
         selectedProduct(null)
-        selectColour(null)
+        selectedColourProduct(null)
         selectPrice(null)
         selectHighPrice(null)
         userInput("")
+        selectColour(null)
         setIsOpen(false)
     }
 
     const handleHome = () => {
         selectedPage(null)
         selectedProduct(null)
-        selectColour(null)
+        selectedColourProduct(null)
         selectPrice(null)
         selectHighPrice(null)
         userInput("")
+        selectColour(null)
         setIsOpen(false)
     }
     

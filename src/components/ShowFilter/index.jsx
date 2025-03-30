@@ -2,10 +2,11 @@ import styles from './showfilter.module.css'
 import { colorFilter } from '../../data/data'
 
 
-const ShowFilter = ({filteredColour}) => {
+const ShowFilter = ({filteredColour,coloursToDisplay}) => {
 
     const handleColourFilter = (item) => {
-        filteredColour(item) 
+        filteredColour(item)
+        coloursToDisplay(null)
     }
     
     return(
