@@ -2,8 +2,13 @@ import { getImageUrl } from "../../utils/function"
 import { size } from "../../data/data"
 import styles from './productDisplay.module.css'
 
-const ProductDisplay = ({displayProduct}) => {
-    console.log(displayProduct)
+const ProductDisplay = ({displayProduct, selectColour}) => {
+     console.log(displayProduct)
+     
+     if(displayProduct) {
+        selectColour(null)
+     }
+   
     return (
         <div className={styles.product_display}>
             <div className={styles.image_container}>

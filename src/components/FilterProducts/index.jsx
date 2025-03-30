@@ -2,9 +2,12 @@ import styles from './filterproducts.module.css'
 import { getImageUrl } from '../../utils/function'
 import { size } from '../../data/data'
 
-const FilterProducts = ({displayFilterProducts,clickedProduct}) => {
+const FilterProducts = ({displayFilterProducts,clickedProduct, userInput}) => {
     console.log(displayFilterProducts)
-    
+    const handleClick = (item) => {
+        clickedProduct(item)
+        userInput("")
+    }
     return (
         <>
     
@@ -17,7 +20,7 @@ const FilterProducts = ({displayFilterProducts,clickedProduct}) => {
                 </div>
                 <div className={styles.filter_products_container}>
                     {displayFilterProducts.map((item,index)=> 
-                    <div key={index} className={styles .filter_products} onClick={()=>clickedProduct(item)}>
+                    <div key={index} className={styles .filter_products} onClick={()=>handleClick(item)}>
                         <img src={getImageUrl(item.image)} alt={item.name}></img>
                         <p>{item.name}</p>
                         <p>{item.price} SEK</p>

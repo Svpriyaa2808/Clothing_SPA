@@ -17,7 +17,7 @@ const MainPage = ({clickedProduct,selectedColourProduct,selectPrice,selectedCate
          <div className={styles.filter_buttons}>
             <LowToHigh lowPriceFilter={selectPrice} highPriceFilter={selectHighPrice}  selectInput={userInput} chooseColour={selectedColourProduct} coloursToDisplay={selectColour}/>
             <HighToLow highPriceFilter={selectHighPrice} lowPriceFilter={selectPrice} selectInput={userInput}  chooseColour={selectedColourProduct} coloursToDisplay={selectColour}/>
-            <ColourFilter chooseColour={selectedColourProduct} coloursToDisplay={selectColour}/>
+            <ColourFilter chooseColour={selectedColourProduct} coloursToDisplay={selectColour} highPriceFilter={selectHighPrice} lowPriceFilter={selectPrice} />
         </div>
         <div className={styles.product_container}>
             {selectedCategory.map((item,index)=> 

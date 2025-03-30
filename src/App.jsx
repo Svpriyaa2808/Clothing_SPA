@@ -69,13 +69,14 @@ function App() {
         </>
         }
 
-        {productDetails && <ProductDisplay displayProduct={productDetails}/>}
+        {productDetails && <ProductDisplay displayProduct={productDetails}  selectColour={setShowColourFilter}/>}
 
 
         {showFilterProduct  && !productDetails && 
           <FilterProducts clickedProduct={setProductDetails} 
             userInput={setInputValue} 
-            displayFilterProducts={colourFilterProductsArray(showFilterProduct,showPage)}/>
+            displayFilterProducts={colourFilterProductsArray(showFilterProduct,showPage)}
+          />
         }
         {showColourFilter && <ShowFilter selectColour={setShowColourFilter} filteredColour={setShowFilterProduct}/>} 
         
