@@ -39,11 +39,6 @@ function App() {
     console.log(sortedHighPriceArray)
   }
 
-  // const handleColourFilter = () => {
-  //   setShowColourFilter(!showColourFilter)
-  // }
-
- 
   return (
     <>
       <Navigation selectedPage={setShowPage} 
@@ -53,41 +48,64 @@ function App() {
                   selectHighPrice={HighPrice}
                   userInput={setInputValue}
                   selectColour={setShowColourFilter}/>
-      {inputValue && <ShowSearch query={SearchQuery(inputValue.toLowerCase())} selectValue={setInputValue} displayProduct={setProductDetails}/>}
+      
+      {inputValue && <ShowSearch  query={SearchQuery(inputValue.toLowerCase())} 
+                                  selectValue={setInputValue} 
+                                  displayProduct={setProductDetails}
+                                  selectColour={setShowColourFilter}/>}
+      
       <Header />
+      
       <div className='main'>
-      {showColourFilter}
-        {!productDetails && 
-        <>
-          {!showPage && <HomeMain />}
+    
+        {!productDetails && !showPage && <HomeMain />}
 
-          {showPage && !showFilterProduct && !sortByLowPrice && !sortByHighPrice &&
-            <MainPage clickedProduct={setProductDetails}
-            selectedColourProduct = {setShowFilterProduct}
+        {showPage && !showFilterProduct && !sortByLowPrice && !sortByHighPrice && !productDetails &&
+           <MainPage clickedProduct={setProductDetails}
             selectPrice = {price} 
             selectHighPrice={HighPrice}
             userInput={setInputValue}
             selectColour={setShowColourFilter}
             selectedCategory={categoryArray(showPage)}/> }
-        </>
-        }
-
-        {productDetails && <ProductDisplay displayProduct={productDetails}  selectColour={setShowColourFilter}/>}
+        
+        {productDetails && 
+          <ProductDisplay displayProduct={productDetails}  
+                          selectColour={setShowColourFilter}/>}
 
 
         {showFilterProduct  && !productDetails && 
           <FilterProducts clickedProduct={setProductDetails} 
-            userInput={setInputValue} 
-            displayFilterProducts={colourFilterProductsArray(showFilterProduct,showPage)}
-          />
-        }
+                          userInput={setInputValue} 
+                          displayFilterProducts={colourFilterProductsArray(showFilterProduct,showPage)}
+          />}
+        
         {showColourFilter && <ShowFilter selectColour={setShowColourFilter} filteredColour={setShowFilterProduct}/>} 
         
-        {sortByLowPrice && !showFilterProduct && !productDetails && !sortByHighPrice && 
-          <MainPage selectedCategory={sortedLowPriceProducts} selectHighPrice={HighPrice} clickedProduct={setProductDetails} selectColour={setShowColourFilter}/> } 
+        {/* {sortByLowPrice && !showFilterProduct && !productDetails && !sortByHighPrice && 
+          <MainPage selectedCategory={sortedLowPriceProducts} 
+                    selectHighPrice={HighPrice} 
+                    clickedProduct={setProductDetails} 
+                    selectColour={setShowColourFilter} 
+                    userInput={setInputValue}/> } 
         
         {sortByHighPrice && !showFilterProduct && !productDetails && !sortByLowPrice  &&
-          <MainPage selectedCategory={sortedHighPriceProducts} selectPrice={price} clickedProduct={setProductDetails} selectColour={setShowColourFilter}/> } 
+          <MainPage selectedCategory={sortedHighPriceProducts} 
+                    selectPrice={price} 
+                    clickedProduct={setProductDetails} 
+                    selectColour={setShowColourFilter} 
+                    userInput={setInputValue}/> }  */}
+
+        {(sortByLowPrice || sortByHighPrice) && !showFilterProduct && !productDetails && (
+          <MainPage
+            selectedCategory={sortByLowPrice ? sortedLowPriceProducts : sortedHighPriceProducts}
+            selectPrice={sortByHighPrice ? price : undefined}
+            selectHighPrice={sortByLowPrice ? HighPrice : undefined}
+            clickedProduct={setProductDetails}
+            selectColour={setShowColourFilter}
+            userInput={setInputValue}
+          />
+        )}
+
       </div>
       
       <Footer />

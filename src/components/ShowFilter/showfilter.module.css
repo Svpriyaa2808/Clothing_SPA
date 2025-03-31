@@ -28,9 +28,9 @@
     }
 }
 
-@media screen and (max-width : 390px) {
+@media screen and (max-width : 400px) {
     .colours {
-        top: 55%;
+        top: 56%;
         left: 5%;
     }
 }

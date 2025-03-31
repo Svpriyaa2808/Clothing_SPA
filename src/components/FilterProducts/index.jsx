@@ -8,9 +8,9 @@ const FilterProducts = ({displayFilterProducts,clickedProduct, userInput}) => {
         clickedProduct(item)
         userInput("")
     }
+    
     return (
         <>
-    
             {displayFilterProducts && displayFilterProducts.length > 0 ?
             <>
                 <div className={styles.filter_details}>

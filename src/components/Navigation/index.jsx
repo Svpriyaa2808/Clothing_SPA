@@ -30,11 +30,16 @@ const Navigation = ({selectedPage,selectedProduct,selectedColourProduct,selectPr
         selectColour(null)
         setIsOpen(false)
     }
+
+    const handleHamburgerMenu = () => {
+        userInput("")
+        selectColour(null)
+    }
     
     return (
         <div className={styles.nav}>
             <div className={styles.hamburger}>
-            <Hamburger toggled={isOpen} toggle={setIsOpen} onToggle={()=>userInput("")}/>
+            <Hamburger toggled={isOpen} toggle={setIsOpen} onToggle={handleHamburgerMenu}/>
         </div>
 
         {isOpen && 
@@ -53,7 +58,7 @@ const Navigation = ({selectedPage,selectedProduct,selectedColourProduct,selectPr
             {uniqueCategories.map((item,index)=> <NavMenu key={index} menu={item} onClick={()=>handleClick(item)}/>)}
         </div>
         <div className={styles.search_icons}>
-        <Search clickedProduct = {selectedProduct} searchValue={userInput}/>
+        <Search clickedProduct = {selectedProduct} searchValue={userInput} coloursToDisplay={selectColour} toggle={setIsOpen}/>
         </div>
         </div>  
         </div>

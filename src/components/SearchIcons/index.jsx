@@ -1,14 +1,12 @@
-import { useState } from "react"
 import {ShoppingBagOpen,UserCircle } from "@phosphor-icons/react"
 import styles from './searchicon.module.css'
-import { SearchQuery } from "../../data/data"
-import ShowSearch from "../ShowSearchNames"
 
-const Search = ({searchValue}) => {
-
+const Search = ({searchValue,coloursToDisplay,toggle}) => {
     
     const handleClick = (e) => {
         searchValue(e.target.value);
+        coloursToDisplay(null)
+        toggle(false)
     }
 
     return(
