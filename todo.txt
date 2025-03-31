@@ -14,3 +14,5 @@ want to do high to low different component completed
 code refactor
 
 want to add filter components in productdisplay
+
+create sepeate variablename for setshowcolour in high to low

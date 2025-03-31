@@ -39,8 +39,11 @@ function App() {
     console.log(sortedHighPriceArray)
   }
 
+  // const handleColourFilter = () => {
+  //   setShowColourFilter(!showColourFilter)
+  // }
 
-
+ 
   return (
     <>
       <Navigation selectedPage={setShowPage} 
@@ -53,7 +56,7 @@ function App() {
       {inputValue && <ShowSearch query={SearchQuery(inputValue.toLowerCase())} selectValue={setInputValue} displayProduct={setProductDetails}/>}
       <Header />
       <div className='main'>
-      
+      {showColourFilter}
         {!productDetails && 
         <>
           {!showPage && <HomeMain />}
@@ -81,10 +84,10 @@ function App() {
         {showColourFilter && <ShowFilter selectColour={setShowColourFilter} filteredColour={setShowFilterProduct}/>} 
         
         {sortByLowPrice && !showFilterProduct && !productDetails && !sortByHighPrice && 
-          <MainPage selectedCategory={sortedLowPriceProducts} selectHighPrice={HighPrice} clickedProduct={setProductDetails} /> } 
+          <MainPage selectedCategory={sortedLowPriceProducts} selectHighPrice={HighPrice} clickedProduct={setProductDetails} selectColour={setShowColourFilter}/> } 
         
         {sortByHighPrice && !showFilterProduct && !productDetails && !sortByLowPrice  &&
-          <MainPage selectedCategory={sortedHighPriceProducts} selectPrice={price} clickedProduct={setProductDetails} /> } 
+          <MainPage selectedCategory={sortedHighPriceProducts} selectPrice={price} clickedProduct={setProductDetails} selectColour={setShowColourFilter}/> } 
       </div>
       
       <Footer />

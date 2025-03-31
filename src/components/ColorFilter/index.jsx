@@ -7,16 +7,13 @@ const ColourFilter = ({coloursToDisplay,chooseColour,lowPriceFilter,highPriceFil
     // const[showColourFilter,setShowColourFilter] = useState(null)
 
     const handleFilter = () => {
-        coloursToDisplay(coloursToDisplay === "colours" ? null : "colours")
+        coloursToDisplay("colours")
         chooseColour(null)
         console.log(typeof coloursToDisplay)
-        lowPriceFilter(null)
-        highPriceFilter(null)
     }
 
     return (
         <>
-        
             <button className={`${styles.colour_filter} ${styles.button} `} onClick={handleFilter}>
                 <p>Filter</p>
                 <Funnel size={24} />
