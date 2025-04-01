@@ -6,8 +6,6 @@ import Search from '../SearchIcons'
 
 const Navigation = ({selectedPage,selectedProduct,navMenuClose,navMenuOpen,selectedColourProduct,selectPrice,selectHighPrice,userInput,selectColour}) => {
     
-    // const [isOpen, setIsOpen] = useState(false)
-
     const handleClick = (item) => {
         selectedPage(item)
         selectedProduct(null)
@@ -36,7 +34,7 @@ const Navigation = ({selectedPage,selectedProduct,navMenuClose,navMenuOpen,selec
         selectPrice(null)
         selectHighPrice(null)
     }
-    
+
     return (
         <div className={styles.nav}>
             <div className={styles.hamburger}>

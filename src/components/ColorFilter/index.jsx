@@ -2,23 +2,28 @@ import { useState } from 'react'
 import {Funnel} from "@phosphor-icons/react"
 import styles from './colorfilter.module.css'
 
-const ColourFilter = ({coloursToDisplay,selectInput,hamburgerMenu}) => {
+const ColourFilter = ({coloursToDisplay,selectInput,handleOpen,handleClose}) => {
+
+    console.log(handleOpen)
     
     const [isFilterActive, setIsFilterActive] = useState(false);
 
+   
     const handleFilter = () => {
         if (isFilterActive) {
-            coloursToDisplay(null); 
-            // hamburgerMenu(false)
-            
+            coloursToDisplay(null);  
+               
         } else {
             coloursToDisplay("colours");
             selectInput("")
-            hamburgerMenu(false)
+            if(handleOpen === true){
+                handleClose(false)
+            }   
         }
+        
         setIsFilterActive(!isFilterActive); 
+       
     };
-
 
     return (
         <>

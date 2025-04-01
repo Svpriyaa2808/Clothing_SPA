@@ -39,6 +39,11 @@ function App() {
     setInputValue(null)
     console.log(sortedHighPriceArray)
   }
+  console.log(isOpen)
+
+  // const handleMenu = () => {
+  //   setIsOpen(false)
+  // }
 
   return (
     <>
@@ -65,6 +70,7 @@ function App() {
 
         {showPage && !showFilterProduct && !sortByLowPrice && !sortByHighPrice && !productDetails &&
            <MainPage  clickedProduct={setProductDetails}
+                      navMenuOpen={isOpen}
                       navMenuClose={setIsOpen}
                       selectPrice = {price} 
                       selectHighPrice={HighPrice}
