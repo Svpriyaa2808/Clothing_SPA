@@ -12,9 +12,10 @@ import ShowFilter from './components/ShowFilter'
 
 function App() {
   const [showPage, setShowPage] = useState(null)    //for choosing page
+  const [isOpen, setIsOpen] = useState(false) //for hamburger
   const [productDetails, setProductDetails] = useState(null) //if the particular pdt is clicked
   const [showFilterProduct,setShowFilterProduct] = useState(null) //displaying pdts based on colorfilter
-  const[showColourFilter,setShowColourFilter] = useState(null) //if filter is clicked the list of colors to be displayed
+  const [showColourFilter,setShowColourFilter] = useState(null) //if filter is clicked the list of colors to be displayed
   const [inputValue,setInputValue] = useState("") //searchquery
   const [sortByLowPrice,setSortByLowPrice] = useState(null) //lowprice
   const [sortByHighPrice,setSortByHighPrice] = useState(null) //highprice
@@ -47,7 +48,9 @@ function App() {
                   selectPrice={price} 
                   selectHighPrice={HighPrice}
                   userInput={setInputValue}
-                  selectColour={setShowColourFilter}/>
+                  selectColour={setShowColourFilter}
+                  navMenuClose={setIsOpen}
+                  navMenuOpen={isOpen}/>
       
       {inputValue && <ShowSearch  query={SearchQuery(inputValue.toLowerCase())} 
                                   selectValue={setInputValue} 
@@ -61,23 +64,24 @@ function App() {
         {!productDetails && !showPage && <HomeMain />}
 
         {showPage && !showFilterProduct && !sortByLowPrice && !sortByHighPrice && !productDetails &&
-           <MainPage clickedProduct={setProductDetails}
-            selectPrice = {price} 
-            selectHighPrice={HighPrice}
-            userInput={setInputValue}
-            selectColour={setShowColourFilter}
-            selectedCategory={categoryArray(showPage)}/> }
+           <MainPage  clickedProduct={setProductDetails}
+                      navMenuClose={setIsOpen}
+                      selectPrice = {price} 
+                      selectHighPrice={HighPrice}
+                      userInput={setInputValue}
+                      selectColour={setShowColourFilter}
+                      selectedCategory={categoryArray(showPage)}/> }
         
         {productDetails && 
           <ProductDisplay displayProduct={productDetails}  
-                          selectColour={setShowColourFilter}/>}
+                          selectColour={setShowColourFilter}
+                          navMenuClose={setIsOpen}/>}
 
 
         {showFilterProduct  && !productDetails && 
           <FilterProducts clickedProduct={setProductDetails} 
                           userInput={setInputValue} 
-                          displayFilterProducts={colourFilterProductsArray(showFilterProduct,showPage)}
-          />}
+                          displayFilterProducts={colourFilterProductsArray(showFilterProduct,showPage)}/>}
         
         {showColourFilter && <ShowFilter 
                               selectColour={setShowColourFilter} 

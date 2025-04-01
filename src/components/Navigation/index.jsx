@@ -1,13 +1,12 @@
-import { useState } from 'react'
 import styles from './navigation.module.css'
 import { uniqueCategories } from '../../data/data'
 import NavMenu from '../NavMenu'
 import Hamburger from 'hamburger-react'
 import Search from '../SearchIcons'
 
-const Navigation = ({selectedPage,selectedProduct,selectedColourProduct,selectPrice,selectHighPrice,userInput,selectColour}) => {
+const Navigation = ({selectedPage,selectedProduct,navMenuClose,navMenuOpen,selectedColourProduct,selectPrice,selectHighPrice,userInput,selectColour}) => {
     
-    const [isOpen, setIsOpen] = useState(false)
+    // const [isOpen, setIsOpen] = useState(false)
 
     const handleClick = (item) => {
         selectedPage(item)
@@ -17,7 +16,7 @@ const Navigation = ({selectedPage,selectedProduct,selectedColourProduct,selectPr
         selectHighPrice(null)
         userInput("")
         selectColour(null)
-        setIsOpen(false)
+        navMenuClose(false)
     }
 
     const handleHome = () => {
@@ -28,21 +27,23 @@ const Navigation = ({selectedPage,selectedProduct,selectedColourProduct,selectPr
         selectHighPrice(null)
         userInput("")
         selectColour(null)
-        setIsOpen(false)
+        navMenuClose(false)
     }
 
     const handleHamburgerMenu = () => {
         userInput("")
         selectColour(null)
+        selectPrice(null)
+        selectHighPrice(null)
     }
     
     return (
         <div className={styles.nav}>
             <div className={styles.hamburger}>
-            <Hamburger toggled={isOpen} toggle={setIsOpen} onToggle={handleHamburgerMenu}/>
+            <Hamburger toggled={navMenuOpen} toggle={navMenuClose} onToggle={handleHamburgerMenu}/>
         </div>
 
-        {isOpen && 
+        {navMenuOpen && 
             <>
              <div className={styles.hamburger_links}>
             <NavMenu menu = "Home" onClick={handleHome} />
@@ -58,7 +59,7 @@ const Navigation = ({selectedPage,selectedProduct,selectedColourProduct,selectPr
             {uniqueCategories.map((item,index)=> <NavMenu key={index} menu={item} onClick={()=>handleClick(item)}/>)}
         </div>
         <div className={styles.search_icons}>
-        <Search clickedProduct = {selectedProduct} searchValue={userInput} coloursToDisplay={selectColour} toggle={setIsOpen}/>
+        <Search clickedProduct = {selectedProduct} searchValue={userInput} coloursToDisplay={selectColour} toggle={navMenuClose}/>
         </div>
         </div>  
         </div>

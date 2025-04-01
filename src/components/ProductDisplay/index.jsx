@@ -3,12 +3,12 @@ import { size } from "../../data/data"
 import styles from './productDisplay.module.css'
 import { useEffect } from "react"
 
-const ProductDisplay = ({displayProduct, selectColour}) => {
+const ProductDisplay = ({displayProduct, selectColour,navMenuClose}) => {
      console.log(displayProduct)
      
-    //  if(displayProduct) {
-    //     selectColour(null)
-    //  }
+    useEffect (() => {
+        navMenuClose(false)
+    },[navMenuClose])
 
     useEffect (()=> {
         selectColour(null)

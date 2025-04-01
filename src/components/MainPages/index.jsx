@@ -4,7 +4,7 @@ import ColourFilter from '../ColorFilter'
 import LowToHigh from '../PriceFilter/LowToHigh'
 import HighToLow from '../PriceFilter/HighToLow'
 
-const MainPage = ({clickedProduct,selectPrice,selectedCategory,userInput,selectHighPrice,selectColour}) => {
+const MainPage = ({clickedProduct,selectPrice,navMenuClose,selectedCategory,userInput,selectHighPrice,selectColour}) => {
     
     const handleClick = (item) => {
         clickedProduct(item)
@@ -15,9 +15,9 @@ const MainPage = ({clickedProduct,selectPrice,selectedCategory,userInput,selectH
        return (
         <>
          <div className={styles.filter_buttons}>
-            <LowToHigh lowPriceFilter={selectPrice} coloursToDisplay={selectColour}/>
-            <HighToLow highPriceFilter={selectHighPrice} coloursToDisplay={selectColour}/>
-            <ColourFilter  coloursToDisplay={selectColour} selectInput={userInput} />
+            <LowToHigh lowPriceFilter={selectPrice} coloursToDisplay={selectColour} hamburgerMenu={navMenuClose}/>
+            <HighToLow highPriceFilter={selectHighPrice} coloursToDisplay={selectColour} hamburgerMenu={navMenuClose}/>
+            <ColourFilter  coloursToDisplay={selectColour} selectInput={userInput} hamburgerMenu={navMenuClose}/>
         </div>
         <div className={styles.product_container}>
             {selectedCategory.map((item,index)=> 

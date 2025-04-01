@@ -2,11 +2,12 @@ import LowToHigh from '../LowToHigh'
 import styles from '../pricefilter.module.css'
 import { SortDescending} from '@phosphor-icons/react'
 
-const HighToLow = ({highPriceFilter,coloursToDisplay}) => {
+const HighToLow = ({highPriceFilter,coloursToDisplay,hamburgerMenu}) => {
    
     const handleHighPrice = () => {
         highPriceFilter("desc")
         coloursToDisplay(null)
+        hamburgerMenu(false)
     }
 
     return (

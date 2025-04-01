@@ -7,6 +7,7 @@ const FilterProducts = ({displayFilterProducts,clickedProduct, userInput}) => {
     const handleClick = (item) => {
         clickedProduct(item)
         userInput("")
+        
     }
     
     return (
