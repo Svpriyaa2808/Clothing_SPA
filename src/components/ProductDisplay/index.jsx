@@ -1,13 +1,18 @@
 import { getImageUrl } from "../../utils/function"
 import { size } from "../../data/data"
 import styles from './productDisplay.module.css'
+import { useEffect } from "react"
 
 const ProductDisplay = ({displayProduct, selectColour}) => {
      console.log(displayProduct)
      
-     if(displayProduct) {
+    //  if(displayProduct) {
+    //     selectColour(null)
+    //  }
+
+    useEffect (()=> {
         selectColour(null)
-     }
+    },[selectColour])
    
     return (
         <div className={styles.product_display}>

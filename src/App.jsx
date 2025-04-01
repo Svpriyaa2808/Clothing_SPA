@@ -79,22 +79,10 @@ function App() {
                           displayFilterProducts={colourFilterProductsArray(showFilterProduct,showPage)}
           />}
         
-        {showColourFilter && <ShowFilter selectColour={setShowColourFilter} filteredColour={setShowFilterProduct}/>} 
+        {showColourFilter && <ShowFilter 
+                              selectColour={setShowColourFilter} 
+                              filteredColour={setShowFilterProduct} />} 
         
-        {/* {sortByLowPrice && !showFilterProduct && !productDetails && !sortByHighPrice && 
-          <MainPage selectedCategory={sortedLowPriceProducts} 
-                    selectHighPrice={HighPrice} 
-                    clickedProduct={setProductDetails} 
-                    selectColour={setShowColourFilter} 
-                    userInput={setInputValue}/> } 
-        
-        {sortByHighPrice && !showFilterProduct && !productDetails && !sortByLowPrice  &&
-          <MainPage selectedCategory={sortedHighPriceProducts} 
-                    selectPrice={price} 
-                    clickedProduct={setProductDetails} 
-                    selectColour={setShowColourFilter} 
-                    userInput={setInputValue}/> }  */}
-
         {(sortByLowPrice || sortByHighPrice) && !showFilterProduct && !productDetails && (
           <MainPage
             selectedCategory={sortByLowPrice ? sortedLowPriceProducts : sortedHighPriceProducts}
