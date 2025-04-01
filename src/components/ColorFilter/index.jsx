@@ -9,6 +9,7 @@ const ColourFilter = ({coloursToDisplay,selectInput,hamburgerMenu}) => {
     const handleFilter = () => {
         if (isFilterActive) {
             coloursToDisplay(null); 
+            // hamburgerMenu(false)
             
         } else {
             coloursToDisplay("colours");
